@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/estilos/estilo.css">
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <script src="scripts.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
-    <title>Calculator app</title>
+    <title>getNumber app</title>
 </head>
 <body>
     <main id="calculator">
@@ -26,14 +27,15 @@
         <div id="calculadora">
             
 
-            <button>7</button> <button>8</button> <button>9</button> <button>del</button>
-            <button>4</button> <button>5</button> <button>6</button> <button>+</button>
-            <button>1</button> <button>2</button> <button>3</button> <button>-</button>
-            <button>.</button> <button>0</button> <button>/</button> <button>x</button>
-            <button class="reset">reset</button> <button class="igual">=</button>
+            <button id="sete" onclick="getNumber(7)">7</button> <button id="oito" onclick="getNumber(8)">8</button> <button id="nove" onclick="getNumber(9)">9</button> <button class="button-blue" onclick="cleanDisplay()">del</button>
+            <button id="quatro" onclick="getNumber(4)">4</button> <button id="cinco" onclick="getNumber(5)">5</button> <button id="seis" onclick="getNumber(6)">6</button> <button id="soma" onclick="getOperator('+')">+</button>
+            <button id="um" onclick="getNumber(1)">1</button> <button id="dois" onclick=getNumber(2)>2</button> <button id="3" onclick="getNumber(3)">3</button> <button id="subtracao" onclick="getOperator('-')">-</button>
+            <button id="decimal" onclick="teste()">.</button> <button id="zero" onclick="getNumber(0)">0</button> <button id="divisao" onclick="getOperator('/')">/</button> <button id="multiplicacao" onclick="getOperator('x')">x</button>
+            <button class="reset button-blue">reset</button> <button class="igual" onclick="calculate()">=</button>
 
         </div>
         
     </main>
+
 </body>
 </html>
