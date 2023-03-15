@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/estilo.css">
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
@@ -24,13 +24,13 @@
 
         <div id="display">0</div>
 
-        <div id="calculadora">
+        <div id="buttons">
             
 
             <button id="sete" onclick="tapNumber(7)">7</button> <button id="oito" onclick="tapNumber(8)">8</button> <button id="nove" onclick="tapNumber(9)">9</button> <button class="button-blue" onclick="deleter()">del</button>
             <button id="quatro" onclick="tapNumber(4)">4</button> <button id="cinco" onclick="tapNumber(5)">5</button> <button id="seis" onclick="tapNumber(6)">6</button> <button id="soma" onclick="tapOperator('+')">+</button>
             <button id="um" onclick="tapNumber(1)">1</button> <button id="dois" onclick=tapNumber(2)>2</button> <button id="3" onclick="tapNumber(3)">3</button> <button id="subtracao" onclick="tapOperator('-')">-</button>
-            <button id="decimal" onclick="teste()">.</button> <button id="zero" onclick="tapNumber(0)">0</button> <button id="divisao" onclick="tapOperator('/')">/</button> <button id="multiplicacao" onclick="tapOperator('x')">x</button>
+            <button id="decimal" onclick="addDecimal()">.</button> <button id="zero" onclick="tapNumber(0)">0</button> <button id="divisao" onclick="tapOperator('/')">/</button> <button id="multiplicacao" onclick="tapOperator('x')">x</button>
             <button class="reset button-blue" onclick="reset()">reset</button> <button class="igual" onclick="calculator()">=</button>
 
         </div>
