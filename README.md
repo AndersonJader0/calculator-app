@@ -7,7 +7,7 @@
 
 > ⚠️The Design belongs to Front-end Mentor, I am responsable of the solution and development of the APP🙎‍♂️
 
-#### 💁🏻‍♂️If you are intersted to see the project take a look at my solution bellow👇🏼👇🏼
+#### 💁🏻‍♂️If you are interested to see the project take a look at my solution bellow👇🏼👇🏼
 
 ![image](https://user-images.githubusercontent.com/105549520/225448332-3f028a6c-e994-4730-ab46-730bca85c8e1.png)
 
