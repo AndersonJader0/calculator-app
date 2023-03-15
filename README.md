@@ -7,6 +7,8 @@
 
 > ⚠️The Design belongs to Front-end Mentor, I am responsable of the solution and development of the APP🙎‍♂️
 
+> 🪧Status: On Test
+
 > Link to access the app on your user agent: https://calculatorapp-aj.netlify.app 
 
 #### 💁🏻‍♂️If you are interested to see the project take a look at my solution bellow👇🏼👇🏼
