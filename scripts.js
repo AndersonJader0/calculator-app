@@ -1,119 +1,157 @@
-var numberSinal;
+var numberTapped;
+var launcher = 0;
+var wasDeleted = false;
 
-function attDisplay(number){
-    var display = document.querySelector('#display');
-    if(number == '+' || number == '-' || number == '/' || number == 'x'){
-        numberSinal = number1;
-        numberSinal += number;
-        display.innerHTML = numberSinal;
-    }else if(changeToNumber2 == 0){
-        number = parseFloat(number);
-        display.innerHTML = number;
-    }else if(changeToNumber2 == 1){
-        numberSinal += number;
-        display.innerHTML = numberSinal;
-    }
-}
-
-function cleanDisplay(){
-    var display = document.querySelector('#display');
-    display.innerHTML = 0;
-    changeToString1 = 0;
-    changeToString2 = 0;
-    number1 = 0;
-    number2 = 0;
-    number3 = 0;
-    calc;
-    sinal = 0;
-    changeToNumber2 = 0;
-    identifyOperator = 0;
-}
-
-var changeToString1 = 0;
-var changeToString2 = 0;
-var number1 = 0;
-var number2 = 0;
-var calc;
-var sinal = 0;
-var changeToNumber2 = 0;
-var identifyOperator = 0;
-var clockToCalculate = 0;
-
-var number3 = '';
-
-function getNumber(number){
-
-    if(changeToNumber2 == 0 && changeToString1 == 0){
-        number1 += number;
-        attDisplay(number1);
-        changeToString1++;
-    }else if(changeToNumber2 == 0 && changeToString1 == 1){
+function deleter(){
+    if(changed == false){
         number1 = String(number1);
-        number1 += number;
-        attDisplay(number1);
-    }else if(changeToNumber2 == 1 && changeToString2 == 0){
-        number2 += number;
-        attDisplay(number2);
-        number3 += String(number);
-        alert(number3);
-        changeToString2++;
-    }else if(changeToNumber2 == 1 && changeToString2 == 1){
+        numberTapped = number1.slice(0, -1);
+        number1 = number1.slice(0, -1);
+        number1 = parseFloat(number1);
+        wasDeleted = true;
+        typer(numberTapped);
+    }else{
         number2 = String(number2);
-        var numberView2 = number;
-        number3 += numberView2;
-        alert(number3);
-        attDisplay(numberView2);
+        numberTapped = number1 + operator + number2.slice(0, -1);
+        number2 = number2.slice(0, -1);
+        number2 = parseFloat(number2);
+        wasDeleted = true;
+        typer(numberTapped);
     }
 }
 
-function getOperator(operator){
-    switch(operator){
+function variablesCleaner(){
+    launcher = 0;
+    numberTapped = 0;
+    display.innerHTML = '';
+    number1 = '';
+    number2 = '';
+    operator = '';
+    changed = true;
+}
+
+function reset(){
+    launcher = 0;
+    numberTapped = 0;
+    display.innerHTML = 0;
+    number1 = '';
+    number2 = '';
+    operator = '';
+    changed = false;
+    calc = 0;
+}
+
+function typer(n){
+    var display = document.querySelector('#display');
+    if(launcher == 0 && wasDeleted == false){
+        display.innerHTML = n;
+        launcher = 1;
+    }else if(launcher == 1 && wasDeleted == false){
+        display.innerHTML += n;
+    }else if(changed == 0 && wasDeleted == true){
+        display.innerHTML = '';
+        display.innerHTML = n;
+        launcher = 1;
+        wasDeleted = false;
+    }else if(changed == 1 && wasDeleted == true){
+        display.innerHTML = '';
+        display.innerHTML = n;
+        wasDeleted = false;
+    }
+}
+
+var number1 = '';
+var number2 = '';
+var operator;
+var changed = false;
+
+function tapNumber(n){
+    if(changed == false){
+        number1 += String(n);
+        numberTapped = n;
+        typer(numberTapped);
+    }else{
+        number2 += String(n);
+        numberTapped = n;
+        typer(numberTapped);
+    }
+}
+
+function tapOperator(o){
+
+    switch(o){
         case '+':
-            sinal = '+';
-            attDisplay(sinal);
-            changeToNumber2 = 1;
+            operator = '+';
+            typer(operator);
             break;
         case '-':
-            sinal = '-';
-            attDisplay(sinal);
-            changeToNumber2 = 1;
+            operator = '-';
+            typer(operator);
             break;
         case '/':
-            sinal = '/';
-            attDisplay(sinal);
-            changeToNumber2 = 1;
+            operator = '/';
+            typer(operator);
             break;
         case 'x':
-            sinal = 'x';
-            attDisplay(sinal);
-            changeToNumber2 = 1;
+            operator = 'x';
+            typer(operator);
             break;
     }
+    changed = true;
 }
 
-function calculate(){
-    if(sinal == '+' && number1 != 0 && number2 != 0){
-        calc = parseFloat(number1) + parseFloat(number3);
-        cleanDisplay();
-        attDisplay(calc);
-    }
+var calc = 0;
 
-    if(sinal == '-' && number1 != 0 && number2 != 0){
-        calc = parseFloat(number1) - parseFloat(number3);
-        cleanDisplay();
-        attDisplay(calc);
-    }
-
-    if(sinal == '/' && number1 != 0 && number2 != 0){
-        calc = parseFloat(number1) / parseFloat(number3);
-        cleanDisplay();
-        attDisplay(calc);
-    }
-
-    if(sinal == 'x' && number1 != 0 && number2 != 0){
-        calc = parseFloat(number1) * parseFloat(number3);
-        cleanDisplay();
-        attDisplay(calc);
+function calculator(){
+    if(calc == 0){
+    number1 = parseFloat(number1);
+    number2 = parseFloat(number2);
+    switch(operator){
+        case '+':
+            calc = number1 + number2;
+            variablesCleaner();
+            typer(calc);
+            break;
+        case '-':
+            calc = number1 - number2;
+            variablesCleaner();
+            typer(calc);
+            break;
+        case '/':
+            calc = number1 / number2;
+            variablesCleaner();
+            typer(calc);
+            break;
+        case 'x':
+            calc = number1 * number2;
+            variablesCleaner();
+            typer(calc);
+            break;
+        }
+    }else{
+        number1 = parseFloat(number1);
+        number2 = parseFloat(number2);
+        switch(operator){
+            case '+':
+                calc = calc + number2;
+                variablesCleaner();
+                typer(calc);
+                break;
+            case '-':
+                calc = calc - number2;
+                variablesCleaner();
+                typer(calc);
+                break;
+            case '/':
+                calc = calc / number2;
+                variablesCleaner();
+                typer(calc);
+                break;
+            case 'x':
+                calc = calc * number2;
+                variablesCleaner();
+                typer(calc);
+                break;
+            }
     }
 }
-

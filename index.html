@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
-    <title>getNumber app</title>
+    <title>Calculator app</title>
 </head>
 <body>
     <main id="calculator">
@@ -27,11 +27,11 @@
         <div id="calculadora">
             
 
-            <button id="sete" onclick="getNumber(7)">7</button> <button id="oito" onclick="getNumber(8)">8</button> <button id="nove" onclick="getNumber(9)">9</button> <button class="button-blue" onclick="cleanDisplay()">del</button>
-            <button id="quatro" onclick="getNumber(4)">4</button> <button id="cinco" onclick="getNumber(5)">5</button> <button id="seis" onclick="getNumber(6)">6</button> <button id="soma" onclick="getOperator('+')">+</button>
-            <button id="um" onclick="getNumber(1)">1</button> <button id="dois" onclick=getNumber(2)>2</button> <button id="3" onclick="getNumber(3)">3</button> <button id="subtracao" onclick="getOperator('-')">-</button>
-            <button id="decimal" onclick="teste()">.</button> <button id="zero" onclick="getNumber(0)">0</button> <button id="divisao" onclick="getOperator('/')">/</button> <button id="multiplicacao" onclick="getOperator('x')">x</button>
-            <button class="reset button-blue">reset</button> <button class="igual" onclick="calculate()">=</button>
+            <button id="sete" onclick="tapNumber(7)">7</button> <button id="oito" onclick="tapNumber(8)">8</button> <button id="nove" onclick="tapNumber(9)">9</button> <button class="button-blue" onclick="deleter()">del</button>
+            <button id="quatro" onclick="tapNumber(4)">4</button> <button id="cinco" onclick="tapNumber(5)">5</button> <button id="seis" onclick="tapNumber(6)">6</button> <button id="soma" onclick="tapOperator('+')">+</button>
+            <button id="um" onclick="tapNumber(1)">1</button> <button id="dois" onclick=tapNumber(2)>2</button> <button id="3" onclick="tapNumber(3)">3</button> <button id="subtracao" onclick="tapOperator('-')">-</button>
+            <button id="decimal" onclick="teste()">.</button> <button id="zero" onclick="tapNumber(0)">0</button> <button id="divisao" onclick="tapOperator('/')">/</button> <button id="multiplicacao" onclick="tapOperator('x')">x</button>
+            <button class="reset button-blue" onclick="reset()">reset</button> <button class="igual" onclick="calculator()">=</button>
 
         </div>
         
