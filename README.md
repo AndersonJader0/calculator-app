@@ -7,7 +7,7 @@
 
 > ⚠️The Design belongs to Front-end Mentor, I am responsable of the solution and development of the APP🙎‍♂️
 
-> 🪧Status: On Test
+> 🪧Status: Develop
 
 #### 💁🏻‍♂️If you are interested to see the project take a look at my solution bellow👇🏼
 
