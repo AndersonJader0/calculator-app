@@ -15,4 +15,4 @@
 
 ![image](https://user-images.githubusercontent.com/105549520/225448332-3f028a6c-e994-4730-ab46-730bca85c8e1.png)
 
-I enjoy so much developing, everyone knows there is moments that bothers but it's necessary the practice and persistence until the end to envolve yourself.🤓
+I enjoy so much developing and It will be a pleasure if you take a look on the project.🤓
