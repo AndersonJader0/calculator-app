@@ -1,18 +1,19 @@
 # Calculator-app
 > Focused on Programming Logic with JavaScript
 
-#### 💁‍♂️Hello! Welcome to the App Calculator Project👋👋
+#### Hello! Welcome to App Calculator Project👋👋
 
-> ⚠️This project have to goal of exercise the basic of the Programming Logic with JavaScript👨🏻‍💻
+> ⚠️APP done with JavaScript💻
 
-> ⚠️The Design belongs to Front-end Mentor, I am responsable of the solution and development of the APP🙎‍♂️
+> ⚠️All done by myself
 
-> 🪧Status: Develop
+> 🪧Status: Concluded
 
 #### 💁🏻‍♂️If you are interested to see the project take a look at my solution bellow👇🏼
 
 > Link to access the app on your user agent: https://tourmaline-rugelach-7df635.netlify.app
 
-![image](https://user-images.githubusercontent.com/105549520/225448332-3f028a6c-e994-4730-ab46-730bca85c8e1.png)
+![image](https://user-images.githubusercontent.com/105549520/228328759-81356671-375d-4e7f-bfca-5d78487a7b7c.png) 
+![image](https://user-images.githubusercontent.com/105549520/228329212-a99f4eac-d862-49dc-829e-512d9dc80d54.png)
 
 I enjoy so much developing and It will be a pleasure if you take a look on the project.🤓
