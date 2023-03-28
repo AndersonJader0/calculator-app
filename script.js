@@ -137,3 +137,27 @@ function pointer(){
         nm2point = true;
     }
 }
+
+/* Checkbox */
+
+function verifier() {
+    let check = document.getElementById("chk-box");
+    var btns = document.getElementsByTagName('button');
+    if(check.checked == true){
+        document.querySelector('.body').style.background = '#444';
+        document.getElementById('calculator').style.background = '#111'
+        document.getElementById('calculator').style.color = '#ccc'
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].style.backgroundColor = "#ccc";
+        }
+        output.style.color = 'black';
+    }else{
+        document.querySelector('.body').style.background = '#eee';
+        document.getElementById('calculator').style.background = '#ddd'
+        document.getElementById('calculator').style.color = '#111'
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].style.backgroundColor = "#eee";
+        }
+        output.style.color = 'black';
+    }
+} 
