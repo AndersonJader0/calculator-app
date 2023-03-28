@@ -61,7 +61,7 @@ function calculate(){
                 calc = number1 + number2;
                 break ;
             case '-':
-                calc = number1 - number1;
+                calc = number1 - number2;
                 break;
             case '/':
                 calc = number1 / number2;
