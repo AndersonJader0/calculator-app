@@ -44,9 +44,11 @@ const saveValue1 = n1 => number1 += n1;
 const saveValue2 = n2 => number2 += n2;
 
 function getOperator(sinal){
-    if(document.getElementById('output').innerText !== '0' && document.getElementById('output').innerText !== '.'){
+    if(document.getElementById('output').innerText !== '0' && document.getElementById('output').innerText !== '.' && operator == ''){
     operator += sinal;
     tap(operator);
+    }else{
+        alert('n pode');
     }
 }
 
