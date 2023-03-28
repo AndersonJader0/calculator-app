@@ -22,16 +22,16 @@
             </div>
         </div>
 
-        <div id="display">0</div>
+        <div id="output">0</div>
 
         <div id="buttons">
             
 
-            <button id="sete" onclick="tapNumber(7)">7</button> <button id="oito" onclick="tapNumber(8)">8</button> <button id="nove" onclick="tapNumber(9)">9</button> <button class="button-blue" onclick="deleter()">del</button>
-            <button id="quatro" onclick="tapNumber(4)">4</button> <button id="cinco" onclick="tapNumber(5)">5</button> <button id="seis" onclick="tapNumber(6)">6</button> <button id="soma" onclick="tapOperator('+')">+</button>
-            <button id="um" onclick="tapNumber(1)">1</button> <button id="dois" onclick=tapNumber(2)>2</button> <button id="3" onclick="tapNumber(3)">3</button> <button id="subtracao" onclick="tapOperator('-')">-</button>
-            <button id="decimal" onclick="addDecimal()">.</button> <button id="zero" onclick="tapNumber(0)">0</button> <button id="divisao" onclick="tapOperator('/')">/</button> <button id="multiplicacao" onclick="tapOperator('x')">x</button>
-            <button class="reset button-blue" onclick="reset()">reset</button> <button class="igual" onclick="calculator()">=</button>
+            <button id="sete" onclick="tap('7')">7</button> <button id="oito" onclick="tap('8')">8</button> <button id="nove" onclick="tap('9')">9</button> <button class="button-blue" onclick="deleter()">del</button>
+            <button id="quatro" onclick="tap('4')">4</button> <button id="cinco" onclick="tap('5')">5</button> <button id="seis" onclick="tap('6')">6</button> <button id="soma" onclick="getOperator('+')">+</button>
+            <button id="um" onclick="tap('1')">1</button> <button id="dois" onclick="tap('2')">2</button> <button id="3" onclick="tap('3')">3</button> <button id="subtracao" onclick="getOperator('-')">-</button>
+            <button id="decimal" onclick="pointer()">.</button> <button id="zero" onclick="tap('0')">0</button> <button id="divisao" onclick="getOperator('/')">/</button> <button id="multiplicacao" onclick="getOperator('x')">x</button>
+            <button class="reset button-blue" onclick="reset()">reset</button> <button class="igual" onclick="calculate()">=</button>
 
         </div>
         

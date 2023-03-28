@@ -1,239 +1,139 @@
-var numberTapped;
-var launcher = 0;
-var wasDeleted = false;
-var anyTurnDeleted = false; //This var is to fix the delete of the user until the zero to calculate again
-var havePoint = false;
-
-function deleter(){
-    if(launcher == 0){
-        alert('Digite um número'); 
-        //No execute nothing because the user it's trying to delete 0;
-    }else if(launcher == 1 && number1.length == 1 && operator == ''){
-        number1 = '';
-        numberTapped = '0';
-        anyTurnDeleted = true;
-        wasDeleted = true;
-        launcher = 0;
-        typer(numberTapped);
-    }else if(launcher == 1 && number1.length > 1 && changed == false){
-        if(changed == false){
-            number1 = String(number1);
-            numberTapped = number1.slice(0, -1);
-            number1 = number1.slice(0, -1);
-            wasDeleted = true;
-            typer(numberTapped);
-        }
-    }else if(number2.length >= 1){
-        number2 = String(number2);
-        number2 = number2.slice(0, -1);
-        numberTapped = number1 + operator + number2;
-        wasDeleted = true;
-        typer(numberTapped);
-    }
-    
-    else if(operator != '' && number2.length == 0){
-        operator = '';
-        numberTapped = number1;
-        changed = false;
-        wasDeleted = true;
-        typer(numberTapped);
-    }else{
-        alert('Reset para continuar');
-    }
-}
-
-function variablesCleaner(){
-    launcher = 0;
-    numberTapped = 0;
-    display.innerHTML = '';
-    number1 = '';
-    number2 = '';
-    operator = '';
-    changed = true;
-}
-
-function reset(){
-    launcher = 0;
-    numberTapped = 0;
-    display.innerHTML = 0;
-    number1 = '';
-    number2 = '';
-    operator = '';
-    changed = false;
-    calc = 0;
-}
-
-function typer(n){
-    var display = document.querySelector('#display');
-    if(launcher == 0 && wasDeleted == false){
-        display.innerHTML = '';
-        display.innerHTML = n;
-        launcher = 1;
-    }else if(launcher == 1 && wasDeleted == false && anyTurnDeleted == false && havePoint == false){
-        display.innerHTML += n;
-    }else if(launcher == 1 && wasDeleted == false && anyTurnDeleted == false && havePoint == true){
-        display.innerHTML = '';
-        display.innerHTML = n;
-        havePoint = false;
-    }
-    else if(changed == false && wasDeleted == true){
-        display.innerHTML = '';
-        display.innerHTML = n;
-        launcher = 1;
-        wasDeleted = false;
-    }else if(changed == true && wasDeleted == true){
-        display.innerHTML = '';
-        display.innerHTML = n;
-        wasDeleted = false;
-    }else if(launcher == 1 && wasDeleted == false && anyTurnDeleted == true && display.textContent == '0'){
-        display.innerHTML = '';
-        display.innerHTML += n;
-        anyTurnDeleted = false;
-    }
-}
-
 var number1 = '';
 var number2 = '';
 var operator = '';
-var changed = false;
-
-function addDecimal(){
-    if(changed == false){
-        number1 += '.';
-        numberTapped = number1;
-        havePoint = true;
-        typer(numberTapped);
-    }else{
-        number2 += '.';
-        numberTapped = number2;
-        havePoint = true;
-        typer(numberTapped);
-    }
-}
-
-function tapNumber(n){
-    if(changed == false){
-        number1 += String(n);
-        numberTapped = n;
-        typer(numberTapped);
-    }else{
-        number2 += String(n);
-        numberTapped = n;
-        typer(numberTapped);
-    }
-}
-
-function tapOperator(o){
-
-    switch(o){
-        case '+':
-            operator = '+';
-            typer(operator);
-            break;
-        case '-':
-            operator = '-';
-            typer(operator);
-            break;
-        case '/':
-            operator = '/';
-            typer(operator);
-            break;
-        case 'x':
-            operator = 'x';
-            typer(operator);
-            break;
-    }
-    changed = true;
-}
-
+var display = '';
 var calc = 0;
+var keep = false;
 
-function calculator(){
-    if(calc == 0){
-    number1 = parseFloat(number1);
-    number2 = parseFloat(number2);
-    switch(operator){
-        case '+':
-            calc = number1 + number2;
-            variablesCleaner();
-            typer(calc);
-            break;
-        case '-':
-            calc = number1 - number2;
-            variablesCleaner();
-            typer(calc);
-            break;
-        case '/':
-            calc = number1 / number2;
-            calc = String(calc);
-            if(calc.length > 5){
-                calc = parseFloat(calc);
-                calc = calc.toFixed(5);
-                variablesCleaner();
-                typer(calc);
-            }else{
-                calc = parseFloat(calc);
-                calc = number1 / number2;
-                variablesCleaner();
-                typer(calc);
-            }
-            break;
-        case 'x':
-            calc = number1 * number2;
-            calc = String(calc);
-            if(calc.length > 5){
-                calc = parseFloat(calc);
-                calc = calc.toFixed(5);
-                variablesCleaner();
-                typer(calc);
-            }else{
-                calc = parseFloat(calc);
-                variablesCleaner();
-                typer(calc);
-            }
-            break;
+function reset(){
+    document.getElementById('output').innerText = '0';
+    number1 = '';
+    number2 = '';
+    operator = '';
+    display = '';
+    calc = 0;
+    keep = false;
+    nm1point = false;
+    nm2point = false;
+}
+
+const clean = () => document.getElementById('output').innerText = '';
+
+function tap(value){
+
+    if(value === '+'|| value === '-' || value === '/' || value === 'x'){
+        if(operator.length < 2){
+        clean();
+        display += value;
+        document.getElementById('output').innerText = display;
         }
-    }else{
+    }else if(operator == ''){
+        clean();
+        display += value;
+        document.getElementById('output').innerText = display;
+        saveValue1(value);
+    }else if(operator != '' & operator.length < 2){
+        clean();
+        display += value;
+        document.getElementById('output').innerText = display;
+        saveValue2(value);
+    }
+}
+
+const saveValue1 = n1 => number1 += n1;
+const saveValue2 = n2 => number2 += n2;
+
+function getOperator(sinal){
+    if(document.getElementById('output').innerText !== '0' && document.getElementById('output').innerText !== '.'){
+    operator += sinal;
+    tap(operator);
+    }
+}
+
+function calculate(){
+    if(number2 != ''){
         number1 = parseFloat(number1);
         number2 = parseFloat(number2);
-        switch(operator){
+        calc = parseFloat(calc);
+        if(keep === false){
+            switch(operator){
             case '+':
-                calc = calc + number2;
-                variablesCleaner();
-                typer(calc);
-                break;
+                calc = number1 + number2;
+                break ;
             case '-':
-                calc = calc - number2;
-                variablesCleaner();
-                typer(calc);
+                calc = number1 - number1;
                 break;
             case '/':
-                calc = calc / number2;
-                calc = String(calc);
-                if(calc.length > 5){
-                    calc = parseFloat(calc);
-                    calc = calc.toFixed(5);
-                    variablesCleaner();
-                    typer(calc);
-                }else{
-                    calc = parseFloat(calc);
-                    variablesCleaner();
-                    typer(calc);
-                }
+                calc = number1 / number2;
                 break;
             case 'x':
-                calc = calc * number2;
-                calc = String(calc);
-                if(calc.length > 5){
-                    calc = parseFloat(calc);
-                    calc = calc.toFixed(5);
-                    variablesCleaner();
-                    typer(calc);
-                }else{
-                    calc = parseFloat(calc);
-                    variablesCleaner();
-                    typer(calc);
-                }
+                calc = number1 * number2;
+                break;
+            default:
+                'operator não identificado';
             }
+            keep = true;
+            result();
+        }else if(keep === true && number2 != ''){
+            switch(operator){
+            case '+':
+                calc += number2;
+                break;
+            case '-':
+                calc -= number2;
+                break;
+            case '/':
+                calc /= number2;
+                break;
+            case 'x':
+                calc *= number2;
+                break;
+            default:
+                'operator não identificado';
+            }
+            result();
+        }
+    }
+}
+function result(){
+    clean();
+    number1 = '';
+    number2 = '';
+    operator = '';
+    display = calc;
+    document.getElementById('output').innerText = display;
+}
+
+function deleter(){
+    display = display.slice(0, -1);
+    clean();
+    document.getElementById('output').innerText = display;
+    if(operator == ''){
+        number1 = number1.slice(0, -1);
+        if(number1.length == 0){
+            reset();
+        }
+    }else if(operator != '' && number2 == ''){
+        operator = '';
+    }else if(operator != '' && number2 != ''){
+        number2 = number2.slice(0, -1);
+    }
+}
+
+var nm1point = false;
+var nm2point = false;
+function pointer(){
+    if(operator == '' && nm1point == false){
+        display += '.';
+        document.getElementById('output').innerText = display;
+        number1 += '.';
+        nm1point = true;
+    }else if(operator != '' && number2 == ''){
+        alert('Digite um número antes');
+    }else if(operator != '' && number2 != '' && nm2point == false){
+        display += '.';
+        document.getElementById('output').innerText = display;
+        number2 += '.';
+        nm2point = true;
     }
 }
