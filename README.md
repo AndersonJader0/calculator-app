@@ -12,7 +12,7 @@
 
 #### 💁🏻‍♂️If you are interested to see the project take a look at my solution bellow👇🏼
 
-> Link to access the app on your user agent: https://tourmaline-rugelach-7df635.netlify.app
+> Link to access the app on your user agent: https://tourmaline-rugelach-7df635.netlify.app/
 
 ![image](https://user-images.githubusercontent.com/105549520/228328759-81356671-375d-4e7f-bfca-5d78487a7b7c.png) 
 ![image](https://user-images.githubusercontent.com/105549520/228329212-a99f4eac-d862-49dc-829e-512d9dc80d54.png)
