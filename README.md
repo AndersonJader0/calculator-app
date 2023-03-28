@@ -1,5 +1,6 @@
 # Calculator-app
-> Focused on Programming Logic with JavaScript
+> Version2: 
+> Improvements => script reduced 100 lines of code => css with sass
 
 #### Hello! Welcome to App Calculator Project👋👋
 
