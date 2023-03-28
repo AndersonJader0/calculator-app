@@ -48,7 +48,7 @@ function getOperator(sinal){
     operator += sinal;
     tap(operator);
     }else{
-        alert('n pode');
+        alert('Funcionalidade ainda não implementada, por enquanto operação somente com 1 operador');
     }
 }
 
